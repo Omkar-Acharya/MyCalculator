@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:autofit="http://schemas.android.com/apk/res-auto"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#484848"
+    android:layout_height="match_parent"
+    tools:context="application.omkar.org.mycalculator.MainActivity"
+    android:orientation="vertical">
+
+    <!-- TextView for holding the expression -->
+    <TextView
+        android:id="@+id/digits"
+        android:layout_height="80sp"
+        android:ellipsize="start"
+        android:layout_width="match_parent"
+        android:textSize="40sp"
+        android:singleLine="true"
+        android:gravity="end"
+        android:textColor="@color/digit"/>
+
+    <!-- TextView for holding the evaluated expression's answer -->
+    <me.grantland.widget.AutofitTextView
+        android:id="@+id/answer"
+        android:layout_width="match_parent"
+        android:layout_height="100sp"
+        android:textSize="50sp"
+        android:ellipsize="end"
+        android:singleLine="true"
+        android:gravity="end"
+        android:textColor="@color/digit"
+        autofit:minTextSize="25sp"/>
+
+    <!-- Linear Layout to hold all the buttons -->
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent">
+
+        <!-- Linear Layout to hold the buttons: 'C', '+/-', '%', '/'-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <!-- Button holding key: 'C'-->
+            <Button
+                android:id="@+id/c"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="C"/>
+
+            <!-- Button holding key: '+/-'-->
+            <Button
+                android:id="@+id/plusminus"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="+/-" />
+
+            <!-- Button holding key: '%'-->
+            <Button
+                android:id="@+id/percent"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="%"/>
+
+            <!-- Button holding key: '/'-->
+            <Button
+                android:id="@+id/division"
+                style="@style/OperationButton"
+                android:background="@drawable/operations_background"
+                android:textColor="@android:color/white"
+                android:text="/" />
+
+        </LinearLayout>
+
+        <!-- Linear Layout to hold the buttons: '7', '8', '9', 'X'-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <!-- Button holding key: '7'-->
+            <Button
+                android:id="@+id/seven"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="7" />
+
+            <!-- Button holding key: '8'-->
+            <Button
+                android:id="@+id/eight"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="8" />
+
+            <!-- Button holding key: '9'-->
+            <Button
+                android:id="@+id/nine"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="9"/>
+
+            <!-- Button holding key: 'X'-->
+            <Button
+                android:id="@+id/multiply"
+                style="@style/OperationButton"
+                android:background="@drawable/operations_background"
+                android:textColor="@android:color/white"
+                android:text="X"/>
+
+        </LinearLayout>
+
+        <!-- Linear Layout to hold the buttons: '4', '5', '6', '-'-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <!-- Button holding key: '4'-->
+            <Button
+                android:id="@+id/four"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="4" />
+
+            <!-- Button holding key: '5'-->
+            <Button
+                android:id="@+id/five"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="5" />
+
+            <!-- Button holding key: '6'-->
+            <Button
+                android:id="@+id/six"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="6"/>
+
+            <!-- Button holding key: '-'-->
+            <Button
+                android:id="@+id/subtract"
+                style="@style/OperationButton"
+                android:background="@drawable/operations_background"
+                android:textColor="@android:color/white"
+                android:text="_"/>
+
+        </LinearLayout>
+
+        <!-- Linear Layout to hold the buttons: '1', '2', '3', '+'-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <!-- Button holding key: '1'-->
+            <Button
+                android:id="@+id/one"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="1" />
+
+            <!-- Button holding key: '2'-->
+            <Button
+                android:id="@+id/two"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="2" />
+
+            <!-- Button holding key: '3'-->
+            <Button
+                android:id="@+id/three"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="3"/>
+
+            <!-- Button holding key: '+'-->
+            <Button
+                android:id="@+id/add"
+                style="@style/OperationButton"
+                android:background="@drawable/operations_background"
+                android:textColor="@android:color/white"
+                android:text="+"/>
+
+        </LinearLayout>
+
+        <!-- Linear Layout to hold the buttons: '0', '.', 'Undo', '='-->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_height="0dp"
+            android:layout_width="match_parent"
+            android:layout_weight="1">
+
+            <!-- Button holding key: '0'-->
+            <Button
+                android:id="@+id/zero"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="0" />
+
+            <!-- Button holding key: '.'-->
+            <Button
+                android:id="@+id/dot"
+                style="@style/OperationButton"
+                android:background="@drawable/button_background"
+                android:text="."/>
+
+            <!-- ImageView holding key: 'Undo'-->
+            <ImageView
+                android:id="@+id/undo"
+                style="@style/OperationButton"
+                android:scaleType="center"
+                android:src="@drawable/backspace"/>
+
+            <!-- Button holding key: '='-->
+            <Button
+                android:id="@+id/equalto"
+                style="@style/OperationButton"
+                android:background="@drawable/operations_background"
+                android:textColor="@android:color/white"
+                android:text="="/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
